@@ -391,7 +391,7 @@ function ProjectLinks({ project }: { project?: Project }) {
               </div>
             }
           >
-            <span className="bg-green-100 p-1 px-2 rounded-full cursor-pointer">
+            <span className="bg-teal-100 px-2 rounded-full cursor-pointer text-[#11BC92]">
               {"?"}
             </span>
           </Tooltip>
