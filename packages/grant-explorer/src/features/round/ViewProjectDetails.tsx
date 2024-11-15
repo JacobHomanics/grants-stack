@@ -1,4 +1,6 @@
 import { datadogLogs } from "@datadog/browser-logs";
+import { ReactComponent as ShieldIcon } from "../../assets/icons/shield.svg";
+
 import {
   ArrowTrendingUpIcon,
   LinkIcon,
@@ -51,6 +53,7 @@ import {
 } from "../projects/hooks/useApplication";
 import { PassportWidget } from "../common/PassportWidget";
 import CopyToClipboard from "./CopyToClipboard";
+import Tooltip from "./Tooltip";
 
 const CalendarIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -371,6 +374,28 @@ function ProjectLinks({ project }: { project?: Project }) {
     >
       <ProjectLink icon={EthereumIcon}>
         <CopyToClipboard text={ens.data || recipient} />
+      </ProjectLink>
+      <ProjectLink icon={ShieldIcon}>
+        <p>
+          Builder Score: 54{" "}
+          <Tooltip
+            components={
+              <div>
+                <p>
+                  This builder score is generated from the following sources:
+                </p>
+                <br />
+                <p>OSS: 30</p>
+                <p>KarmaGAP: 15</p>
+                <p>Talent Protocol: 9</p>
+              </div>
+            }
+          >
+            <span className="bg-green-100 p-1 px-2 rounded-full cursor-pointer">
+              {"?"}
+            </span>
+          </Tooltip>
+        </p>
       </ProjectLink>
       <ProjectLink icon={CalendarIcon}>{createdOn}</ProjectLink>
       <ProjectLink url={website} icon={GlobeIcon}>
